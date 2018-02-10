@@ -7,9 +7,7 @@ echo "archvm" >> /etc/hostname
 
 pacman -Syu
 pacman -S wicd grub --noconfirm --needed
-mkdir /esp
-mount /dev/sdd1 /esp
-grub-install --target=x86_64-efi --efi-directory=/esp --bootloader-id=arch
+grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable wicd
 pacman -S vim docker i3 rofi feh wget rsync compton zsh --noconfirm --needed  
@@ -23,8 +21,8 @@ pacman -S adobe-source-code-pro-fonts --noconfirm --needed
 pacman -S python-pip --noconfirm --needed
 pip install i3ipc
 pacman -S powerline powerline-fonts texlive-most dunst openssh --noconfirm --needed
-useradd -m -g wheel -s /usr/bin/zsh tbrooks
-wget https://raw.githubusercontent.com/trevorlbrooks/arch-install/master/tempSudo
+useradd -m -g wheel -s /usr/bin/zsh juicetin
+wget https://raw.githubusercontent.com/Tkdefender88/arch-install/master/tempSudo
 cp tempSudo /etc/sudoers.d/tempSudo
 chmod 0440 /etc/sudoers.d/tempSudo
 su tbrooks -c sh -c "$(curl -fsSL https://raw.githubusercontent.com/Tkdefender88/arch-install/master/userInstalls.sh)"
