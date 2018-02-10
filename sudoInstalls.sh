@@ -25,7 +25,7 @@ useradd -m -g wheel -s /usr/bin/zsh juicetin
 wget https://raw.githubusercontent.com/Tkdefender88/arch-install/master/tempSudo
 cp tempSudo /etc/sudoers.d/tempSudo
 chmod 0440 /etc/sudoers.d/tempSudo
-su tbrooks -c sh -c "$(curl -fsSL https://raw.githubusercontent.com/Tkdefender88/arch-install/master/userInstalls.sh)"
+su juicetin -c sh -c "$(curl -fsSL https://raw.githubusercontent.com/Tkdefender88/arch-install/master/userInstalls.sh)"
 rm /etc/sudoers.d/tempSudo
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.d/wheel
 chmod 0440 /etc/sudoers.d/wheel
